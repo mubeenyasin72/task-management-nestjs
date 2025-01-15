@@ -17,6 +17,7 @@ export class TasksService {
       tasks = tasks.filter((task) => task.status === status);
     }
     if (search) {
+      console.log(search);
       tasks = tasks.filter((task) => {
         if (task.title.includes(search) || task.description.includes(search)) {
           return true;
