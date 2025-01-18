@@ -17,16 +17,6 @@ import { Task } from './task.entity';
 @Controller('tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}
-  // @Get()
-  // getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
-  //   if (Object.keys(filterDto).length) {
-  //     // if we have any filters defined, call tasksService.getTasksWithFilters
-  //     return this.tasksService.getTasksWithFilters(filterDto);
-  //   } else {
-  //     //other wise get all tasks
-  //     return this.tasksService.getAllTasks();
-  //   }
-  // }
   @Post('/create')
   createTask(@Body() CraeteTaskDto: CraeteTaskDto): Promise<Task> {
     return this.tasksService.createTask(CraeteTaskDto);
